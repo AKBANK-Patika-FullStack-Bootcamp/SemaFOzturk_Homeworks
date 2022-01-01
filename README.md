@@ -1,7 +1,7 @@
 # Ödev 1
 ## CRUD işlemleri barındıran Web APİ Oluşturma
 
-> .Net Core ile Web Api oluşturma. 
+İlk .Net Core Api projem.
 
 ### Painting Modeli
 ```C#
