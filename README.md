@@ -47,7 +47,7 @@ public void Doldur()
         }
 ```
 
-**girilen id'ye göre paintings listedeki belirli id'li verinin gösterildiği *ListPaintingbyId()* methodu**
+**Girilen id'ye göre paintings listesindeki belirli id'li verinin gösterildiği *ListPaintingbyId()* methodu**
 ```C#
 [HttpGet("{id}")]
         public Painting ListPaintingbyId(int id)
@@ -60,7 +60,7 @@ public void Doldur()
         }
 ```
 
-**Tablo(painting) eklemeyi sağlayan *ListPaintingbyId()* methodu**
+**Tablo(painting) eklemeyi sağlayan *PostPainting()* methodu**
 ```C#
 [HttpPost]
         public Result PostPainting(Painting painting)
@@ -73,18 +73,84 @@ public void Doldur()
             Painting paintingCheck = paintings.FirstOrDefault(p => p.paintingId == painting.paintingId && p.paintingName == painting.paintingName);
             if (paintingCheck == null)
             {
+                //nesne kontrol edilerek listeye eklendi.
                 paintings.Add(painting);
 
+                //oluşturulan result nesnesine gerekli durum, mesaj atamaları yapıldı.
                 result.status = 1;
                 result.message = painting.paintingId + " id'li tablo listeye eklenmiştir.";
                 result.pList = paintings.OrderBy(p => p.paintingId).ToList();
             }
             else
             {
+                //oluşturulan result nesnesine gerekli durum, mesaj atamaları yapıldı.
                 result.status = 0;
                 result.message = "!! " + painting.paintingId + " id'li tablo listeye eklenememiştir. !!";
             }
             return result;
         }
 ```
+
+**Girilen id'ye göre veri güncellemeyi sağlayan *UpdatePainting()* methodu**
+```C#
+[HttpPut("{id}")]
+        public Result UpdatePainting(int id, Painting painting)
+        {
+            //veriler listeye eklendi.
+            Doldur();
+            Result result = new Result();
+            
+            //güncellenecek nesne oluşturulan willUpdate nesnesine atandı.
+            Painting willUpdate = paintings.Find(p => p.paintingId == id);
+
+            if (willUpdate != null)
+            {
+                //güncellenecek nesne listeden silinerek güncel değerleriyle eklendi.
+                paintings.Add(painting);
+                paintings.Remove(willUpdate);
+                
+                //oluşturulan result nesnesine gerekli durum, mesaj atamaları yapıldı.
+                result.status = 1;
+                result.message = id + " id'li kullanıcı başarıyla güncellendi.";
+                result.pList = paintings.OrderBy(p => p.paintingId).ToList();
+            }
+            else
+            {
+                result.status = 1;
+                result.message = "!! " + id + " id'li kullanıcı bilgileri güncellenirken bir hata oluştu. !!";
+            }
+            return result;
+        }
+```
+
+**Girilen id'ye göre veri silmeyi sağlayan *DeletePainting()* methodu**
+```C#
+[HttpDelete("{id}")]
+        public Result DeletePainting(int id)
+        {
+            //veriler listeye eklendi.
+            Doldur();
+            Result result = new Result();
+
+            //silinecek nesne oluşturulan willDelete nesnesine atandı.
+            Painting willDelete = paintings.Find(p => p.paintingId == id);
+            if (willDelete != null)
+            {
+                //willDelete nesnesi listeden silindi.
+                paintings.Remove(willDelete);
+                
+                //oluşturulan result nesnesine gerekli durum, mesaj atamaları yapıldı.
+                result.status = 1;
+                result.message = id + " id'li kullanıcı başarıyla silindi.";
+                result.pList = paintings.OrderBy(p => p.paintingId).ToList();
+            }
+            else
+            {
+                result.status = 0;
+                result.message = "!! " + id + " id'li kullanıcı silinirken bir hata meydana geldi. !!";
+            }
+            return result;
+        }
+```
+
 
