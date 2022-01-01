@@ -36,7 +36,7 @@ public void Doldur()
 }
 ```
 
-**paintings listesindeki verilerin listelendiği __ListPainting()__ methodu**
+**paintings listesindeki verilerin listelendiği *ListPainting()* methodu**
 ```C#
 [HttpGet()]
         public List<Painting> ListPainting()
