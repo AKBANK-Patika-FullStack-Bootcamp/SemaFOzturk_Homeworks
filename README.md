@@ -4,7 +4,7 @@
 ### CRUD işlemleri barındıran Web APİ Oluşturma
 
 **PaintingController**
-'''C#
+```C#
 public class Painting
     {
         public int paintingId { get; set; }
@@ -14,8 +14,8 @@ public class Painting
         public string? paintingDate { get; set; }
         public string? technique { get; set; }
     }
-'''
+```
 
-'''C#
+```C#
 public void Doldur()
-'''
+```
