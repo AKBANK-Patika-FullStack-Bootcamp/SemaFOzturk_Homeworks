@@ -1,6 +1,8 @@
 # Ödev 1
 ## CRUD işlemleri barındıran Web APİ Oluşturma
 
+Detaylar:
+
 ### Painting Modeli
 ```C#
 public class Painting
