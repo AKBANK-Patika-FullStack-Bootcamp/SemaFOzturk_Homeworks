@@ -38,7 +38,7 @@ public void Doldur()
 }
 ```
 
-**paintings listesindeki verilerin listelendiği *ListPainting()* methodu**
+**paintings listesindeki verilerin listelendiği *ListPainting()* fonksiyonu**
 ```C#
 [HttpGet()]
         public List<Painting> ListPainting()
@@ -49,7 +49,7 @@ public void Doldur()
         }
 ```
 
-**Girilen id'ye göre paintings listesindeki belirli id'li verinin gösterildiği *ListPaintingbyId()* methodu**
+**Girilen id'ye göre paintings listesindeki belirli id'li verinin gösterildiği *ListPaintingbyId()* fonksiyonu**
 ```C#
 [HttpGet("{id}")]
         public Painting ListPaintingbyId(int id)
@@ -62,7 +62,7 @@ public void Doldur()
         }
 ```
 
-**Tablo(painting) eklemeyi sağlayan *PostPainting()* methodu**
+**Tablo(painting) eklemeyi sağlayan *PostPainting()* fonksiyonu**
 ```C#
 [HttpPost]
         public Result PostPainting(Painting painting)
@@ -93,7 +93,7 @@ public void Doldur()
         }
 ```
 
-**Girilen id'ye göre veri güncellemeyi sağlayan *UpdatePainting()* methodu**
+**Girilen id'ye göre veri güncellemeyi sağlayan *UpdatePainting()* fonksiyonu**
 ```C#
 [HttpPut("{id}")]
         public Result UpdatePainting(int id, Painting painting)
@@ -125,7 +125,7 @@ public void Doldur()
         }
 ```
 
-**Girilen id'ye göre veri silmeyi sağlayan *DeletePainting()* methodu**
+**Girilen id'ye göre veri silmeyi sağlayan *DeletePainting()* fonksiyonu**
 ```C#
 [HttpDelete("{id}")]
         public Result DeletePainting(int id)
