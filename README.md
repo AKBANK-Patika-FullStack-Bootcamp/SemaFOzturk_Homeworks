@@ -45,3 +45,13 @@ public void Doldur()
             return paintings;
         }
 ```
+**girilen id'ye göre paintings listedeki belirli id'li verinin gösterildiği *ListPaintingbyId()* methodu**
+```C#
+[HttpGet("{id}")]
+        public Painting ListPaintingbyId(int id)
+        {
+            Doldur();
+            Painting selectedP = paintings.FirstOrDefault(p => p.paintingId == id);
+            return selectedP;
+        }
+```
