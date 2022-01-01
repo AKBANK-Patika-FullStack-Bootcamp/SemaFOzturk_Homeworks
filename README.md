@@ -36,3 +36,12 @@ public void Doldur()
 }
 ```
 
+**paintings listesindeki verilerin listelendiği __ListPainting() methodu**
+```C#
+[HttpGet()]
+        public List<Painting> ListPainting()
+        {
+            Doldur();
+            return paintings;
+        }
+```
