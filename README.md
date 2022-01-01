@@ -1,9 +1,7 @@
-# SemaFOzturk_Homeworks
+# Ödev 1
+## CRUD işlemleri barındıran Web APİ Oluşturma
 
-## Ödev 1
-### CRUD işlemleri barındıran Web APİ Oluşturma
-
-**PaintingController**
+### **PaintingController**
 ```C#
 public class Painting
     {
