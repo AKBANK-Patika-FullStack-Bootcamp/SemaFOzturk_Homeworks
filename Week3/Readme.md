@@ -12,3 +12,8 @@
 ### PaintingDetails Tablosu
 
 ![image](https://user-images.githubusercontent.com/23210127/148591258-d1165e5e-0864-41f4-b272-9ced91fd3b12.png)
+
+### Diagram
+
+![image](https://user-images.githubusercontent.com/23210127/148591489-120a8071-33b0-4cda-bd0f-f90fac0abc62.png)
+
