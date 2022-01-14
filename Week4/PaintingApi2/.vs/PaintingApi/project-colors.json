@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fad9cc16-ff48-47ec-a52c-3bec24dda616": {
+      "ProjectGuid": "fad9cc16-ff48-47ec-a52c-3bec24dda616",
+      "DisplayName": "PaintingApi",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
